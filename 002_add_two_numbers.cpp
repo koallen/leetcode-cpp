@@ -17,13 +17,11 @@ public:
         int carry = 0;
         while (1) {
             int currVal = 0;
-            if (l1 != nullptr) currVal += l1->val;
-            if (l2 != nullptr) currVal += l2->val;
-            currVal += carry;
+            currVal += (l1 == nullptr ? 0 : l1->val) + (l2 == nullptr ? 0 : l2->val) + carry;
             
             // set carry for next iteration
             carry = currVal > 9 ? 1 : 0;
-            if (currVal > 9) currVal -= 10;
+            currVal = currVal > 9 ? currVal - 10 : currVal;
             currPosition->val = currVal;
             
             // advance input list
