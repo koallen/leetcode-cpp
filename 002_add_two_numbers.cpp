@@ -16,8 +16,7 @@ public:
         
         int carry = 0;
         while (1) {
-            int currVal = 0;
-            currVal += (l1 == nullptr ? 0 : l1->val) + (l2 == nullptr ? 0 : l2->val) + carry;
+            int currVal = (l1 == nullptr ? 0 : l1->val) + (l2 == nullptr ? 0 : l2->val) + carry;
             
             // set carry for next iteration
             carry = currVal > 9 ? 1 : 0;
